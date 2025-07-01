@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Prank Video</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      background-color: black;
+      background: black;
       height: 100%;
       overflow: hidden;
       cursor: pointer;
@@ -17,34 +17,47 @@
       height: 100vh;
       object-fit: cover;
     }
+    #overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
     #tip {
+      color: white;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
-      font-size: 1.2em;
+      font-size: 18px;
       text-align: center;
-      z-index: 10;
+      z-index: 3;
     }
   </style>
 </head>
 <body>
-  <div id="tip">🔊 点击任意位置开启声音</div>
-  <video id="myVideo" muted autoplay playsinline>
-    <source src="1495262476_u1-1-192.MP4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
-  <script>
-    const video = document.getElementById('myVideo');
-    const tip = document.getElementById('tip');
+<div id="overlay"></div>
+<div id="tip">🔊 点击任意位置开启声音</div>
 
-    document.body.addEventListener('click', () => {
-      video.muted = false;
-      video.play();
-      tip.style.display = 'none';
-    });
-  </script>
+<video id="video" autoplay muted playsinline>
+  <source src="1495262476_u1-1-192.MP4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<script>
+  const video = document.getElementById('video');
+  const overlay = document.getElementById('overlay');
+  const tip = document.getElementById('tip');
+
+  overlay.addEventListener('click', () => {
+    video.muted = false;
+    video.play();
+    overlay.style.display = 'none';
+    tip.style.display = 'none';
+  });
+</script>
+
 </body>
 </html>
