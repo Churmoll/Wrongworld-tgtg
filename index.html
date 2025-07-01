@@ -2,16 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Video Playing</title>
+  <title>🎬 Surprise Video</title>
   <style>
-    body { margin: 0; background-color: black; }
-    video { width: 100vw; height: 100vh; object-fit: cover; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      height: 100%;
+      overflow: hidden;
+    }
+    video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
-  <video autoplay muted controls>
-    <source src="1495262476_u1-1-192.MP4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <video id="myVideo" autoplay muted playsinline controls></video>
+
+  <script>
+    const video = document.getElementById('myVideo');
+    const source = document.createElement('source');
+    source.src = 'https://raw.githubusercontent.com/Churmoll/Wrongworld-tgtg/main/1495262476_u1-1-192.MP4';
+    source.type = 'video/mp4';
+    video.appendChild(source);
+  </script>
 </body>
 </html>
