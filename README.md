@@ -1,2 +1,1 @@
 # Wrongworld-tgtg
-prank site
