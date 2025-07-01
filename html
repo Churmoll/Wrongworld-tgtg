@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      height: 100%;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+    #tip {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 1.2em;
+      text-align: center;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div id="tip">🔊 点击任意位置开启声音</div>
+  <video id="myVideo" muted autoplay playsinline>
+    <source src="1495262476_u1-1-192.MP4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    const video = document.getElementById('myVideo');
+    const tip = document.getElementById('tip');
+
+    document.body.addEventListener('click', () => {
+      video.muted = false;
+      video.play();
+      tip.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
