@@ -4,20 +4,13 @@
   <meta charset="UTF-8">
   <title>Video Playing</title>
   <style>
-    body {
-      margin: 0;
-      background-color: black;
-    }
-    video {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-    }
+    body { margin: 0; background-color: black; }
+    video { width: 100vw; height: 100vh; object-fit: cover; }
   </style>
 </head>
 <body>
   <video autoplay muted controls>
-    <source src="1495262476_u1-1-192.MP4" type="video/mp4">
+    <source src="https://raw.githubusercontent.com/Churmoll/Wrongworld-tgtg/main/1495262476_u1-1-192.MP4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </body>
